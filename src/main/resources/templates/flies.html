@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vols</title>
+</head>
+<body>
+    <h1>Vols</h1>
+    <table>
+        <tr>
+            <th>numéro</th>
+            <th>départ</th>
+            <th>heure</th>
+            <th>arrivée</th>
+            <th>heure</th>
+            <th>compagnie</th>
+            <th>prix</th>
+        </tr>
+        <tr th:each="fly:${flies}">
+            <td th:text="${fly.getNumber()}"></td>
+            <td th:text="${fly.getDepartureAirport()}"></td>
+            <td th:text="${fly.getDepartureTime()}"></td>
+            <td th:text="${fly.getArrivalAirport()}"></td>
+            <td th:text="${fly.getArrivalTime()}"></td>
+            <td th:text="${fly.getCompany()}"></td>
+            <td th:text="${fly.getPrice()}"></td>
+        </tr>
+    </table>
+</body>
+</html>
