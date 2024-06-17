@@ -27,20 +27,4 @@ public class FlyServiceImpl implements FlyService {
         return flyRepository.save(fly);
     }
 
-    // pas nécessaire pour le moment
-
-    @Override
-    public Fly getFlyById(Long id) {
-        return flyRepository.findById(id).get();
-    }
-
-    @Override
-    public Fly updateFly(Fly fly) {
-        return flyRepository.save(fly);
-    }
-
-    @Override
-    public void deleteFlyById(Long id) {
-        flyRepository.deleteById(id);
-    }
 }
