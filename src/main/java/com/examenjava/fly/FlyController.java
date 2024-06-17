@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class FlyController {
-    private final FlyService flyService;
+    private FlyService flyService;
 
     public FlyController(FlyService flyService) {
         super();
@@ -24,9 +24,9 @@ public class FlyController {
     public String createFlyForm(Model model) {
         Fly fly = new Fly();
         model.addAttribute("fly", fly);
-        return "flies-create";
+        return "create_fly";
     }
-    @PostMapping("/flies")
+    @PostMapping("/flies/create")
     public String saveFly(@ModelAttribute("fly") Fly fly) {
         flyService.saveFly(fly);
         return "redirect:/flies";

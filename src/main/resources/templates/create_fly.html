@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un vol</title>
+</head>
+<body>
+<h1>Formulaire création de vol</h1>
+<form th:action="@{/flies/create}" th:object="${fly}" method="POST">
+    <div>
+        <label for="number">numéro</label>
+        <input name="number"
+               id="number"
+               th:field="*{number}"
+               type="text"
+               placeholder="Entrez le numéro du vol">
+    </div>
+    <div>
+        <label for="departureAirport">départ</label>
+        <input name="departureAirport"
+               id="departureAirport"
+               th:field="*{departureAirport}"
+               type="text"
+               placeholder="">
+    </div>
+    <div>
+        <label for="departureTime">heure</label>
+        <input name="departureTime"
+               id="departureTime"
+               th:field="*{departureTime}"
+               type="datetime-local">
+    </div>
+    <div>
+        <label for="arrivalAirport">arrivée</label>
+        <input name="arrivalAirport"
+               id="arrivalAirport"
+               th:field="*{arrivalAirport}"
+               type="text">
+    </div>
+    <div>
+        <label for="arrivalTime">heure</label>
+        <input name="arrivalTime"
+               id="arrivalTime"
+               th:field="*{arrivalTime}"
+               type="datetime-local">
+    </div>
+    <div>
+        <label for="compagnie">compagnie</label>
+        <input name="compagnie"
+               id="compagnie"
+               th:field="*{company}"
+               type="text">
+    </div>
+    <div>
+        <label for="price">prix</label>
+        <input name="price"
+               id="price"
+               th:field="*{price}"
+               type="text">
+    </div>
+    <input type="submit" value="Crée">
+</form>
+</body>
+</html>
