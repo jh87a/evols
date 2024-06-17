@@ -1,5 +1,7 @@
 package com.examenjava.fly;
 
+import com.examenjava.fly.entities.Fly;
+import com.examenjava.fly.repositories.FlyRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

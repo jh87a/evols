@@ -1,5 +1,8 @@
-package com.examenjava.fly;
+package com.examenjava.fly.controllers;
 
+import com.examenjava.fly.repositories.AirportRepository;
+import com.examenjava.fly.entities.Fly;
+import com.examenjava.fly.FlyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,11 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class FlyController {
-    private FlyService flyService;
+    private final FlyService flyService;
+    private AirportRepository airportRepository;
 
-    public FlyController(FlyService flyService) {
+    public FlyController(FlyService flyService, AirportRepository airportRepository) {
         super();
         this.flyService = flyService;
+        this.airportRepository = airportRepository;
     }
 
     @GetMapping("/flies")
@@ -24,6 +29,7 @@ public class FlyController {
     public String createFlyForm(Model model) {
         Fly fly = new Fly();
         model.addAttribute("fly", fly);
+        model.addAttribute("airports", airportRepository.findAll());
         return "create_fly";
     }
     @PostMapping("/flies/create")

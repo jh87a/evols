@@ -1,4 +1,4 @@
-package com.examenjava.fly;
+package com.examenjava.fly.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

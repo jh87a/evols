@@ -17,11 +17,9 @@
     </div>
     <div>
         <label for="departureAirport">départ</label>
-        <input name="departureAirport"
-               id="departureAirport"
-               th:field="*{departureAirport}"
-               type="text"
-               placeholder="">
+        <select th:field="*{departureAirport}" id="departureAirport">
+            <option th:each="airport:${airports}" th:text="${airport.name}" th:value="${airport.name}"></option>
+        </select>
     </div>
     <div>
         <label for="departureTime">heure</label>
@@ -32,10 +30,9 @@
     </div>
     <div>
         <label for="arrivalAirport">arrivée</label>
-        <input name="arrivalAirport"
-               id="arrivalAirport"
-               th:field="*{arrivalAirport}"
-               type="text">
+        <select th:field="*{arrivalAirport}" id="arrivalAirport">
+            <option th:each="airport:${airports}" th:text="${airport.name}" th:value="${airport.name}"></option>
+        </select>
     </div>
     <div>
         <label for="arrivalTime">heure</label>
